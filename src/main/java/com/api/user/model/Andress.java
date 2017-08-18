@@ -3,19 +3,15 @@ package com.api.user.model;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 
 import com.api.user.validade.ValidationMessages;
 
-@Entity
+@Embeddable
 public class Andress {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private BigDecimal id;
+
+
     @Column(length = 150)
     @NotNull(message=ValidationMessages.MESSAGE_STREET_NOT_NULL)
 	private String street;
@@ -40,7 +36,7 @@ public class Andress {
 	public Andress(BigDecimal id, String street, String region, String number, String city, String country,
 			String complement) {
 		super();
-		this.id = id;
+	
 		this.street = street;
 		this.region = region;
 		this.number = number;
@@ -52,13 +48,7 @@ public class Andress {
 	public Andress() {
 	}
 
-	public BigDecimal getId() {
-		return id;
-	}
 
-	public void setId(BigDecimal id) {
-		this.id = id;
-	}
 
 	public String getStreet() {
 		return street;

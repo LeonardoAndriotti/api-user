@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class UserDTO {
 	@JsonProperty("id")
 	private BigDecimal id;
-	@JsonProperty("username")
+	@JsonProperty("name")
 	private String username;
 	@JsonProperty("nickname")
 	private String nickname;

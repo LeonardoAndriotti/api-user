@@ -3,6 +3,7 @@ package com.api.user.model;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,14 @@ public class User {
     private String name;
     
     private String nickname;
+    
+    
+    @Embedded
+    private Andress andress;
+    
+    @Embedded
+    private Login login;
+    
 
 	public User(BigDecimal id, String name, String nickname) {
 		super();
@@ -57,5 +66,23 @@ public class User {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+	
+	public Andress getAndress() {
+		return andress;
+	}
+
+	public void setAndress(Andress andress) {
+		this.andress = andress;
+	}
+
+	public Login getLogin() {
+		return login;
+	}
+
+	public void setLogin(Login login) {
+		this.login = login;
+	}
+	
+	
 	
 }
