@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.user.model.User;
+import com.api.user.model.PhysicalPerson;
 import com.api.user.repository.UserRepository;
 
 @RestController
@@ -20,27 +20,27 @@ public class UserController {
 	private UserRepository userRepository;
 
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public void savingUserInApplication(@RequestBody User user) {
+	public void savingUserInApplication(@RequestBody PhysicalPerson user) {
 		userRepository.save(user);
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public List<User> findAllUser() {
+	public List<PhysicalPerson> findAllUser() {
 		return userRepository.findAll();
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public User findUserById(@PathVariable BigDecimal id) {
+	public PhysicalPerson findUserById(@PathVariable BigDecimal id) {
 		return userRepository.findOne(id);
 	}
 	
 	@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
-	public List<User> findUserByName(@PathVariable String name) {
+	public List<PhysicalPerson> findUserByName(@PathVariable String name) {
 		return userRepository.findByName(name);
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-	public void update(@RequestBody User user) {
+	public void update(@RequestBody PhysicalPerson user) {
 		userRepository.saveAndFlush(user);
 	}
 	

@@ -1,47 +1,37 @@
 package com.api.user.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
 import javax.persistence.Embedded;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import com.api.user.validade.*;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-@Table(name="profile")
-public class User {
-
+@MappedSuperclass
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigDecimal id;
-    @Column(length = 60)
-    @NotNull(message=ValidationMessages.MESSAGE_NAME_NOT_NULL)
-    private String name;
-    
-    private String nickname;
-    
-    
-    @Embedded
-    private Andress andress;
-    
-    @Embedded
-    private Login login;
-    
 
-	public User(BigDecimal id, String name, String nickname) {
-		super();
+	private String fone;
+
+	private String mobile;
+
+	@Embedded
+	private Andress andress;
+
+	@Embedded
+	private Login login;
+
+	public User(BigDecimal id) {
 		this.id = id;
-		this.name = name;
-		this.nickname = nickname;
-
 	}
-	
-	public User(){}
+
+	public User() {
+	}
 
 	public BigDecimal getId() {
 		return id;
@@ -51,22 +41,6 @@ public class User {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getNickname() {
-		return nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-	
 	public Andress getAndress() {
 		return andress;
 	}
@@ -82,7 +56,20 @@ public class User {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
-	
-	
-	
+
+	public String getFone() {
+		return fone;
+	}
+
+	public void setFone(String fone) {
+		this.fone = fone;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 }

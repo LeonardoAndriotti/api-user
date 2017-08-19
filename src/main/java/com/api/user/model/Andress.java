@@ -23,7 +23,7 @@ public class Andress {
 	private String region;
     @Column(length = 10)
     @NotNull(message=ValidationMessages.MESSAGE_NUMBER_NOT_NULL)
-	private String number;
+	private String street_number;
     @Column(length = 100)
     @NotNull(message=ValidationMessages.MESSAGE_CITY_NOT_NULL)
 	private String city;
@@ -39,7 +39,7 @@ public class Andress {
 	
 		this.street = street;
 		this.region = region;
-		this.number = number;
+		this.street_number = number;
 		this.city = city;
 		this.country = country;
 		this.complement = complement;
@@ -75,11 +75,11 @@ public class Andress {
 	}
 
 	public String getNumber() {
-		return number;
+		return street_number;
 	}
 
 	public void setNumber(String number) {
-		this.number = number;
+		this.street_number = number;
 	}
 
 	public String getCity() {
