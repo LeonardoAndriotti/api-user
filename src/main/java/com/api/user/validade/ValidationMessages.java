@@ -6,6 +6,7 @@ public class ValidationMessages {
 	public static final String MESSAGE_COMPANY_NOT_NULL = "Campo Nome Fantasia tem que ser informado.";
 	public static final String MESSAGE_TRADE_NOT_NULL = "Campo Razão tem que ser informado.";
 	public static final String MESSAGE_CNPJ_NOT_NULL = "Campo CNPJ tem que ser informado.";
+	public static final String MESSAGE_CPF_NOT_NULL = "Campo CPF tem que ser informado.";
 	// Validações de endereço do usuário
 	public static final String MESSAGE_STREET_NOT_NULL = "Campo Rua tem que ser informado.";
 	public static final String MESSAGE_REGION_NOT_NULL = "Campo Bairro tem que ser informado.";
