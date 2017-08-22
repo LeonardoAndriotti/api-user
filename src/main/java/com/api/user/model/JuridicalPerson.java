@@ -43,5 +43,4 @@ public class JuridicalPerson extends User {
 	public String getCnpj() {
 		return cnpj;
 	}
-
 }

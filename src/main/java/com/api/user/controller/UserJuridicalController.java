@@ -16,6 +16,7 @@ import com.api.user.repository.UserJuridicalPersonRepository;
 
 @RestController
 public class UserJuridicalController {
+	
 	@Autowired
 	private UserJuridicalPersonRepository companyRepository;
 	
