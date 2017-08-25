@@ -6,10 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
-public class CustomerEvaluation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CustumerEvaluation {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigDecimal id;
 	private BigDecimal evaluation;
 	private BigDecimal userId;

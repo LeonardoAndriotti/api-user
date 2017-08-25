@@ -15,7 +15,7 @@ import com.api.user.model.PhysicalPerson;
 import com.api.user.repository.UserRepository;
 
 @RestController
-public class UserController {
+public class UserPhysicalController {
 	@Autowired
 	private UserRepository userRepository;
 
