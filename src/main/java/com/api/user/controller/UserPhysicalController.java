@@ -12,39 +12,40 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.user.model.PhysicalPerson;
-import com.api.user.repository.UserRepository;
+import com.api.user.repository.UserPhysivalPersonRepository;
+
 
 @RestController
 public class UserPhysicalController {
 	@Autowired
-	private UserRepository userRepository;
+	private UserPhysivalPersonRepository userRepository;
 
-	@RequestMapping(value = "/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/user/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void savingUserInApplication(@RequestBody PhysicalPerson user) {
 		userRepository.save(user);
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/get", method = RequestMethod.GET)
 	public List<PhysicalPerson> findAllUser() {
 		return userRepository.findAll();
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public PhysicalPerson findUserById(@PathVariable BigDecimal id) {
 		return userRepository.findOne(id);
 	}
 	
-	@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/name/{name}", method = RequestMethod.GET)
 	public List<PhysicalPerson> findUserByName(@PathVariable String name) {
 		return userRepository.findByName(name);
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/user/update", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void update(@RequestBody PhysicalPerson user) {
 		userRepository.saveAndFlush(user);
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/user/delete/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable BigDecimal id) {
 		userRepository.delete(id);
 	}
