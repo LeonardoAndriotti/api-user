@@ -22,7 +22,7 @@ public class CustumerEvaluationController {
 	private static final int MAX_STAR = 5;
 
 	@Autowired
-	private CustumerEvaluationRepository custumerEvaluationRepository;
+	public CustumerEvaluationRepository custumerEvaluationRepository;
 
 	@RequestMapping(value = "/evaluation", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void createByEvaluation(@RequestBody CustumerEvaluation evaluation) {
@@ -37,6 +37,9 @@ public class CustumerEvaluationController {
 	@RequestMapping(value = "/evaluation/{id}", method = RequestMethod.GET)
 	public BigDecimal createByEvaluation(@PathVariable BigDecimal id) {
 		return calculate(this.custumerEvaluationRepository.findByUserId(id));
+	}
+	public BigDecimal createByEvaluationteste(List<CustumerEvaluation> list) {
+		return calculate(list);
 	}
 
 	private BigDecimal calculate(List<CustumerEvaluation> custumerEvaluation) {
