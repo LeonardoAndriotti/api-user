@@ -11,7 +11,6 @@ import com.api.user.validade.ValidationMessages;
 @Embeddable
 public class Andress {
 
-
     @Column(length = 150)
     @NotNull(message=ValidationMessages.MESSAGE_STREET_NOT_NULL)
 	private String street;
