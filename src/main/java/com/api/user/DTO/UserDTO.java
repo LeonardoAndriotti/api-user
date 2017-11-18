@@ -2,7 +2,7 @@ package com.api.user.DTO;
 
 import java.math.BigDecimal;
 
-import com.api.user.model.Andress;
+import com.api.user.model.Address;
 import com.api.user.model.Login;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,7 +16,7 @@ public class UserDTO {
 	@JsonProperty("nickname")
 	private String nickname;
 	private Login login;
-	private Andress andress;
+	private Address address;
 
 	public BigDecimal getId() {
 		return id;
@@ -50,12 +50,12 @@ public class UserDTO {
 		this.login = login;
 	}
 
-	public Andress getAndress() {
-		return andress;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setAndress(Andress andress) {
-		this.andress = andress;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }

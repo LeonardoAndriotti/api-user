@@ -48,4 +48,6 @@ public class UserJuridicalController {
 	public void delete(@RequestBody BigDecimal id){
 		companyRepository.delete(id);
 	}
+	
+	
 }

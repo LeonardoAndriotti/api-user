@@ -21,7 +21,7 @@ public class User implements Serializable {
 	private String mobile;
 
 	@Embedded
-	private Andress andress;
+	private Address address;
 
 	@Embedded
 	private Login login;
@@ -41,12 +41,12 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public Andress getAndress() {
-		return andress;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setAndress(Andress andress) {
-		this.andress = andress;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public Login getLogin() {

@@ -9,7 +9,7 @@ import com.api.user.model.PhysicalPerson;
 
 public interface UserPhysivalPersonRepository extends JpaRepository<PhysicalPerson, BigDecimal>{
 	public final static String FIND_BY_NAME_QUERY = "SELECT * " + 
-            "FROM profile WHERE name like :name;";
+            "FROM userphysical WHERE name like :name;";
 	
 	
      List<PhysicalPerson> findByName(String name);

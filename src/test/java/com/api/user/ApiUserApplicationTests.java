@@ -1,5 +1,12 @@
 package com.api.user;
 
+
+import com.api.user.controller.CustumerEvaluationController;
+import com.api.user.model.CustumerEvaluation;
+import com.api.user.repository.CustumerEvaluationRepository;
+
+import static org.mockito.Mockito.when;
+
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
@@ -7,20 +14,10 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import com.api.user.controller.CustumerEvaluationController;
-import com.api.user.model.CustumerEvaluation;
-import com.api.user.repository.CustumerEvaluationRepository;
-
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
+ 
 public class ApiUserApplicationTests {
 
 	private static final BigDecimal EVALUATION_TWO = new BigDecimal(2);
@@ -53,7 +50,7 @@ public class ApiUserApplicationTests {
 
 		List<CustumerEvaluation> list = Arrays.asList(listOne, listTwo, listTree);
 
-		Mockito.when(custumerEvaluationRepository.findByUserId(BigDecimal.ONE)).thenReturn(list);
+		when(custumerEvaluationRepository.findByUserId(BigDecimal.ONE)).thenReturn(list);
 
 		BigDecimal createByEvaluation = custumerEvaluationController.createByEvaluation(BigDecimal.ONE);
 
